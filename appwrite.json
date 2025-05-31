@@ -1,0 +1,55 @@
+{
+  "$schema": "https://appwrite.io/schemas/appwrite.schema.json",
+  "functions": [
+    {
+      "name": "creditReward",
+      "entrypoint": "index.js",
+      "runtime": "node-18.0",
+      "path": "backend/functions/creditReward"
+    },
+    {
+      "name": "registerUser",
+      "entrypoint": "index.js",
+      "runtime": "node-18.0",
+      "path": "backend/functions/registerUser"
+    },
+    {
+      "name": "requestWithdrawal",
+      "entrypoint": "index.js",
+      "runtime": "node-18.0",
+      "path": "backend/functions/requestWithdrawal"
+    },
+    {
+      "name": "startCampaignParticipation",
+      "entrypoint": "index.js",
+      "runtime": "node-18.0",
+      "path": "backend/functions/startCampaignParticipation"
+    },
+    {
+      "name": "submitAnswer",
+      "entrypoint": "index.js",
+      "runtime": "node-18.0",
+      "path": "backend/functions/submitAnswer"
+    },
+    {
+      "name": "trackSubscription",
+      "entrypoint": "index.js",
+      "runtime": "node-18.0",
+      "path": "backend/functions/trackSubscription"
+    },
+    {
+      "name": "updateLeaderboard",
+      "entrypoint": "index.js",
+      "runtime": "node-18.0",
+      "path": "backend/functions/updateLeaderboard"
+    },
+    {
+      "name": "updateWatchDuration",
+      "entrypoint": "index.js",
+      "runtime": "node-18.0",
+      "path": "backend/functions/updateWatchDuration"
+    }
+  ],
+  "platforms": [],
+  "projectId": "682f4e0e003c8309a035"
+}
