@@ -2,52 +2,34 @@
   "$schema": "https://appwrite.io/schemas/appwrite.schema.json",
   "functions": [
     {
-      "name": "creditReward",
+      "name": "campaignParticipationHandler",
       "entrypoint": "index.js",
       "runtime": "node-18.0",
-      "path": "backend/functions/creditReward"
+      "path": "backend/functions/campaignParticipationHandler"
     },
     {
-      "name": "registerUser",
+      "name": "userHandler",
       "entrypoint": "index.js",
       "runtime": "node-18.0",
-      "path": "backend/functions/registerUser"
+      "path": "backend/functions/userHandler"
     },
     {
-      "name": "requestWithdrawal",
+      "name": "rewardHandler",
       "entrypoint": "index.js",
       "runtime": "node-18.0",
-      "path": "backend/functions/requestWithdrawal"
+      "path": "backend/functions/rewardHandler"
     },
     {
-      "name": "startCampaignParticipation",
+      "name": "subscriptionHandler",
       "entrypoint": "index.js",
       "runtime": "node-18.0",
-      "path": "backend/functions/startCampaignParticipation"
+      "path": "backend/functions/subscriptionHandler"
     },
     {
-      "name": "submitAnswer",
+      "name": "watchAndLeaderboardHandler",
       "entrypoint": "index.js",
       "runtime": "node-18.0",
-      "path": "backend/functions/submitAnswer"
-    },
-    {
-      "name": "trackSubscription",
-      "entrypoint": "index.js",
-      "runtime": "node-18.0",
-      "path": "backend/functions/trackSubscription"
-    },
-    {
-      "name": "updateLeaderboard",
-      "entrypoint": "index.js",
-      "runtime": "node-18.0",
-      "path": "backend/functions/updateLeaderboard"
-    },
-    {
-      "name": "updateWatchDuration",
-      "entrypoint": "index.js",
-      "runtime": "node-18.0",
-      "path": "backend/functions/updateWatchDuration"
+      "path": "backend/functions/watchAndLeaderboardHandler"
     }
   ],
   "platforms": [],

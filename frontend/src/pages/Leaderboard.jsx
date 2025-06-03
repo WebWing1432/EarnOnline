@@ -1,21 +1,24 @@
 import React from 'react';
 import { useFetchLeaderboard } from '../hooks/useFetchLeaderboard';
 
-const Leaderboard = () => {
+const LeaderBoard = () => {
   const { leaderboard, loading, error } = useFetchLeaderboard();
 
   if (loading) return <div>Loading leaderboard...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <ul>
-      {leaderboard.map((user, index) => (
-        <li key={user.$id}>
-          #{index + 1} - {user.username}: ₹{user.totalEarnings}
-        </li>
-      ))}
-    </ul>
+    <div style={{ padding: '2rem' }}>
+      <h2>🏆 Leaderboard</h2>
+      <ol>
+        {leaderboard.map((user, index) => (
+          <li key={user.$id}>
+            #{index + 1} - {user.username}: ₹{user.totalEarnings}
+          </li>
+        ))}
+      </ol>
+    </div>
   );
 };
 
-export default Leaderboard
+export default LeaderBoard;

@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-function AdminPanel() {
+const AdminPanel = () => {
   return (
-    <div>Admin Panel - Reward Distribution</div>
-  )
-}
+    <div style={{ padding: '2rem' }}>
+      <h2>🔐 Admin Panel</h2>
+      <p>Manage campaign approvals, reward payouts, and system settings.</p>
+      {/* Later: Add tabs for viewing users, verifying answers, payouts, etc. */}
+    </div>
+  );
+};
 
-export default AdminPanel
+export default AdminPanel;

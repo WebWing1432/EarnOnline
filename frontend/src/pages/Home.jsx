@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function Home() {
+const Home = () => {
   return (
-    <div>Welcome to Watch & Earn</div>
-  )
-}
+    <div style={{ padding: '2rem' }}>
+      <h1>🎬 Welcome to Watch & Earn</h1>
+      <p>Watch YouTube videos, earn rewards, and climb the leaderboard!</p>
+    </div>
+  );
+};
 
-export default Home
+export default Home;

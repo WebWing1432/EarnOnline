@@ -1,15 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { Client, Account } from 'appwrite';
+import { Account } from 'appwrite';
 import client from '../appwrite/config';
 
-const endpoint = import.meta.env.VITE_APPWRITE_ENDPOINT;
-const project = import.meta.env.VITE_APPWRITE_PROJECT_ID;
-
-if (!endpoint || !project) {
-  throw new Error("Appwrite environment variables are missing");
-}
-
-// const client = new Client().setEndpoint(endpoint).setProject(project);
 const account = new Account(client);
 
 const AuthContext = createContext();
@@ -23,6 +15,7 @@ export const AuthProvider = ({ children }) => {
       const data = await account.get();
       setUser(data);
     } catch (err) {
+      console.error("Failed to fetch user", err);
       setUser(null);
     } finally {
       setLoading(false);
@@ -45,6 +38,8 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (email, password, name) => {
     await account.create('unique()', email, password, name);
+    await account.createEmailSession(email, password);
+    await getUser();
   };
 
   return (
@@ -54,4 +49,10 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+  return context;
+};

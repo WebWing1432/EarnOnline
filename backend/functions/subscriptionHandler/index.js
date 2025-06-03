@@ -1,4 +1,4 @@
-import { Client, Databases, ID } from "node-appwrite";
+import { Client, Databases, ID } from 'node-appwrite';
 
 export default async ({ req, res, log }) => {
   const client = new Client()
@@ -7,8 +7,7 @@ export default async ({ req, res, log }) => {
     .setKey(process.env.APPWRITE_API_KEY);
 
   const databases = new Databases(client);
-  const databaseId = process.env.APPWRITE_DATABASE_ID;
-  const collectionId = "subscriptions";
+  const dbId = process.env.APPWRITE_DATABASE_ID;
 
   try {
     const { userId, campaignId, channelId, proofUrl } = JSON.parse(req.body);
@@ -17,7 +16,7 @@ export default async ({ req, res, log }) => {
       return res.json({ success: false, message: "Missing required fields" }, 400);
     }
 
-    const document = await databases.createDocument(databaseId, collectionId, ID.unique(), {
+    const document = await databases.createDocument(dbId, process.env.SUBSCRIPTIONS_ID, ID.unique(), {
       userId,
       campaignId,
       channelId,
@@ -27,9 +26,8 @@ export default async ({ req, res, log }) => {
     });
 
     return res.json({ success: true, message: "Subscription recorded", data: document });
-
-  } catch (error) {
-    log(error);
-    return res.json({ success: false, message: "Server error", error: error.message }, 500);
+  } catch (err) {
+    log(err.message);
+    return res.json({ success: false, message: "Server error", error: err.message }, 500);
   }
 };

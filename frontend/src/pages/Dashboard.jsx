@@ -8,11 +8,12 @@ const Dashboard = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div>
-      <h2>Welcome {userData.username}</h2>
+    <div style={{ padding: '2rem' }}>
+      <h2>🎉 Welcome, {userData.username}</h2>
       <p>Total Watch Time: {userData.totalWatchTime} minutes</p>
+      <p>Total Earnings: ₹{userData.totalEarnings}</p>
     </div>
   );
 };
 
-export default Dashboard
+export default Dashboard;
